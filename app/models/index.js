@@ -10,5 +10,7 @@ const db = {};
 db.mongoose = mongoose;
 //SET the url to connect the using the cdConfig variable
 db.url = dbConfig.url;
-db.tutorials = require("./tutorial.model.js")(mongoose);
+db.tutorials = require("./tutorial.model")(mongoose);
+db.projects = require("./project.model")(mongoose);
+db.comments = require("./comment.model")(mongoose);
 module.exports = db;

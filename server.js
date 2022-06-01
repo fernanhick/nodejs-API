@@ -20,6 +20,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get("/", (req, res) => {
     res.json({ message: `squad2gether API V1` });
 });
+require("./app/routes/tutorial.routes")(app);
+require("./app/routes/project.routes")(app);
+
 // set port and listen for requests
 app.listen(PORT, () => {
     console.log(`server listening in port: ${PORT}`);
