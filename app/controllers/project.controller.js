@@ -96,7 +96,7 @@ exports.addComment = async (req, res) => {
     // Save and redirect
     try {
         await projectRelated.save();
-        res.status(200).json({ message: "Comment Submitted" });
+        res.status(200).json({ message: "record saved" });
     } catch (error) {
         res.status(400).json({ error: error.message });
     }

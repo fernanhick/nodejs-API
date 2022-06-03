@@ -1,17 +1,24 @@
 module.exports = (mongoose) => {
     const comments = mongoose.model(
         "Comment",
-        mongoose.Schema({
-            text: {
-                type: String,
-                trim: true,
-                required: true,
+        mongoose.Schema(
+            {
+                text: {
+                    type: String,
+                    trim: true,
+                    required: true,
+                },
+                post: {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: "Project",
+                },
+                author: {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: "User",
+                },
             },
-            post: {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: "Project",
-            },
-        })
+            { timestamps: true }
+        )
     );
     return comments;
 };
